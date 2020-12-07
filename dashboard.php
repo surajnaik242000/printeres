@@ -19,7 +19,7 @@ include("auth.php");
          </div>
    <div class="container border bg-light ">
    	<div class="row">
-        <span class="col-sm-6 text-center btn btn-light"><a href="/printeres/html/consumer.html">Go to Shop</a></span>
+        <span class="col-sm-6 text-center btn btn-light"><a href="/printeres/html/consume.html">Go to Shop</a></span>
         <span class="col-sm-6 text-center btn btn-light"><a href="logout.php">Logout</a></span>
    	</div>
    </div>
