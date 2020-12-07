@@ -18,18 +18,13 @@ span.onclick = function() {
   termcondit.style.display = "none";
 }
 
-function validate(){
-    if(pas != copas){
-        alert("re-check your password please");}
+// function validate()
+// {
+//     if(pas.localeCompare(copas)){
+//         alert("re-check your password please");}
     
-    if(isNaN(cellno)== false){
-        alert("enter the number properly");
-    }
+//     if(isNaN(cellno)== false){
+//         alert("enter the number properly");
+//     }
     
-}
-
-//keep this part //
-var submit = document.getElementById("submit");
-submit.onclick = function f1(){
-    window.location.href = "../html/firstscreen.html";
-}
+// }
