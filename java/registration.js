@@ -18,15 +18,6 @@ span.onclick = function() {
   termcondit.style.display = "none";
 }
 
-function validate(){
-    if(pas != copas){
-        alert("re-check your password please");}
-    
-    if(isNaN(cellno)== false){
-        alert("enter the number properly");
-    }
-    
-}
 
 //keep this part //
 var submit = document.getElementById("submit");

@@ -46,7 +46,7 @@
         {
             echo "<div class='form'>
                   <h3>Required fields are missing.</h3><br/>
-                  <p class='link'>Click here to <a href='registration.html'>registration</a> again.</p>
+                  <p class='link'>Click here to <a href='/printeres/html/registration.html'>register</a> again.</p>
                   </div>";
         }
     } 
