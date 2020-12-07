@@ -33,7 +33,6 @@ footer{
     background: #000000;
     color: white;
     width: 99%;
-    position: fixed;
     bottom: 10px;
     text-align: left;
 }
@@ -57,15 +56,5 @@ figcaption{
     height: 30%;
 }
 
-}
-td{
-    width: 50%;
-    height: 70%;
-    align-items: center;
-    border-bottom: 3px solid white;
-}
-
-td:hover{
-    opacity: 20%;
 }
 

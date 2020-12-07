@@ -13,4 +13,14 @@ window.onclick = function(event) {
   }
 }
 
+var submit = document.getElementById("submit");
+ submit.onclick = function f1(){
+    localStorage.setItem('username', document.getElementById("usn").value);
+}
 
+var gal = document.getElementById("designerid");
+gal.onclick = function (){
+    gal.target ="_blank";
+    window.location.href = "https://surajknaik2000.wixsite.com/capturedright";
+    
+}
