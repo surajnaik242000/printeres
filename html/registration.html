@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>registration</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../css/registration.css">
+        
+    </head>
+    <body>
+         <section id="top">
+            <b>PRINT ANYWHERE <sup><sup>(R)</sup></sup></b>
+        </section>
+        
+        
+        <div id="registration" class="regist">
+        <center>
+                <h1 style="font-style: oblique">REGISTRATION FORM</h1>
+            <form class="registclass" id="registform" onsubmit="validate()"  action="../register.php" method="POST"> 
+               <label>full name :</label><br>
+                <input type="text" maxlength="30" required style="width: 20%;" name="username" placeholder="Enter your full name"><br>
+                <label>date of birth :</label><br>
+                <input type="date" style="width: 20%;" name="dob" required><br>
+                <label>email :</label><br>
+                <input type="email" name="email" required placeholder="example@mail.domain" style="width: 20%;"><br>
+                <label>telephone/mobile no. :</label><br>
+                <input list="format" name="phtype" style="width: 10%;" autocomplete="company"  required>
+                <datalist id="format" >
+                    <option value="office">office</option>
+                    <option value="personal">personal</option>
+                    <option value="company">company</option>
+                </datalist>
+                <input type="tel" id="cell" name="phnumber" style="width: 10%;" maxlength="12" placeholder="xxxx-xxxx-xx" required><br>
+                <label>address :</label><br>
+                <input type="text" style="width: 20%;" name="address" required><br>
+                <label>state :</label><br>
+                <input type="text" name="state" maxlength="10" style="width: 20%;" list="state" required>
+                <datalist id="state">
+                    <option value="Karnataka">Bangaluru</option>
+                    <option value="Kerala">Kochi</option>
+                    <option value="Maharashtra">Mumbai</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Delhi">Delhi</option>
+                </datalist><br>
+                <label>password :</label><br>
+                <input type="password" id="passcode" style="width: 20%;" name="pass"><br>
+                <label>confirm password :</label><br>
+                <input type="password" name="cpass" id="conpassword" style="width: 20%;"><br>
+                <input type="checkbox" style="border-radius: 100%" value="1"><a id="aline" style="color: blue;"> Do you agree the for mentioned terms and conditions?</a>
+                <div id="termcondit" class="termcondit">
+                    <span class="close">&times;</span>
+                    <center>
+                        <h1>Terms and conditions</h1> 
+                        <p>the details provided in this form will be used as proof and if found that any detail is false depending on the level of falsification any number of the following many be applied with/without charges
+                            <list>
+                                <ol>deletion of the personals data and account on the site.</ol>
+                                <ol>in events of scam, the details will be used against the personal with charges and account deletion.</ol>
+                                <ol>the customer will be provided nesseccary imformation of the seller, for safety purpose.</ol>
+                            </list><br>
+                     we believe that all the details provided are valid and true, as this site is based on the rule of honesty, any kind of trickry will be pushnised.    
+                        </p>
+                        
+                    </center>
+                </div><br>
+                <!-- <button id="submit" value="submit" style="color:white; width: 10%; height: 30px; text-transform: uppercase; font-size: 18px; font-display: block;font-family: serif; text-align: center; background-color: green;"> submit</button> -->
+                <input type="submit" class="btn btn-primary" name="Submit"><br>
+            </form>
+            </center>
+        </div>
+        
+          <footer id="makers" class="makers">
+                <p style="align-items: left; text-align: center;"> By: <img src="../img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/steve_350/" style="color: white; text-decoration: none;">STEVE ASTON</a> and <img src="../img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/captured._.right/" style="color: white; text-decoration: none;">SURAJ K NAIK</a></p>
+        </footer>
+        <script type="text/javascript" src="../java/registration.js"></script>
+    </body>
+</html>

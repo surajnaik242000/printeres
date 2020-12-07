@@ -1,0 +1,71 @@
+body {
+    background: linear-gradient(45deg, #8F8787, #333333, #242424, #000000);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#top{
+    font-size: 40px;
+    font-family: sans-serif;
+    font-feature-settings: normal;
+    font-style:normal;
+    text-align: left;
+    background-color: black;
+    padding: 30px;
+    color: #ccfff5;
+    text-shadow: 2px 2px 5px #a8a8a8;
+}
+
+footer{
+    background: #000000;
+    color: white;
+    width: 99%;
+    position: fixed;
+    bottom: 10px;
+    text-align: left;
+}
+
+table{
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+figcaption{
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 25PX;
+    text-align: center;
+    color: aliceblue;
+}
+
+.surface{
+    width: 40%;
+    height: 30%;
+}
+
+}
+td{
+    width: 50%;
+    height: 70%;
+    align-items: center;
+    border-bottom: 3px solid white;
+}
+
+td:hover{
+    opacity: 20%;
+}
+

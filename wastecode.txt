@@ -1,0 +1,6 @@
+registration.js
+
+// keep this part //
+/*var submit = document.getElementById("submit");
+submit.onclick = function f1(){
+    window.location.href = "../html/firstscreen.html";*/
