@@ -14,7 +14,7 @@ function getdetails(){
     var order = localStorage.getItem("object");
      document.getElementById('object').innerHTML = order;
     var total = localStorage.getItem("cup_total");
-     document.getElementById('total').innerHTML = total;
+     document.getElementById('total').innerHTML = total+" "+"rupees";
     var occasion = localStorage.getItem("cup_occasion");
     document.getElementById('occasion').innerHTML = occasion;
     
