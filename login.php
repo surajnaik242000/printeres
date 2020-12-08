@@ -53,7 +53,7 @@ else
   </div>
   </form>
     <hr>
-        <p class="link"><a href="registration.html">New Registration</a></p>
+        <p class="link"><a href="/printeres/html/registration.html">New Registration</a></p>
 
 <?php
     }

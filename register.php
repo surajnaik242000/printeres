@@ -40,7 +40,6 @@
         $result = mysqli_query($db, $query);
         
         $queryr=" INSERT into user_rest ( phtype , phnumber , dob , state , address ) VALUES ('$phtype','$phnumber','$dob','$state','$address')";
-        $resultr=mysqli_query($db,$queryr);
 
         if ($result) 
         {
@@ -48,6 +47,7 @@
                   <h3 class='alert alert-success'>You are registered successfully.</h3><br/>
                   <p class='link'>Click here to <a href='/printeres/html/firstscreen.html'>Login</a></p>
                   </div>";
+             $resultr=mysqli_query($db,$queryr);
         } 
         else 
         {

@@ -12,6 +12,8 @@
 <?php
 require('auth.php');
 require('getid.php');
+// get id of username and insert the order number into another 	
+// table .
 if(isset($_POST['submit']))
 {
 	$selected_size = $_POST['Size'];  
