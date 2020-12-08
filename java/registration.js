@@ -17,10 +17,27 @@ window.onclick = function(event) {
 span.onclick = function() {
   termcondit.style.display = "none";
 }
-
+ var flag = 0
+function validate(){
+    if(pas.value == copas.value){
+      flag = 1;
+    }
+    else{
+         alert("re-check your password please");
+        window.href.location = "#";
+    }
+    
+    if(isNaN(cellno)== false){
+        alert("enter the number properly");
+        window.href.location = "#";
+    }  
+}
 
 //keep this part //
 var submit = document.getElementById("submit");
 submit.onclick = function f1(){
+    validate();
+    if(  flag == 1){
     window.location.href = "../html/firstscreen.html";
+    }
 }
