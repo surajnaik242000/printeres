@@ -18,15 +18,7 @@ span.onclick = function() {
   termcondit.style.display = "none";
 }
 
-<<<<<<< Updated upstream
-function validate(){
-    if(pas != copas){
-        alert("re-check your password please");}
-    
-    if(isNaN(cellno)== false){
-        alert("enter the number properly");
-=======
- var flag = 0
+
 function validate(){
     if(pas.value == copas.value){
       flag = 1;
@@ -39,10 +31,11 @@ function validate(){
     if(isNaN(cellno)== false){
         alert("enter the number properly");
         window.href.location = "#";
->>>>>>> Stashed changes
+
     }
     
 }
+
 
 //keep this part //
 var submit = document.getElementById("submit");
