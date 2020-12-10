@@ -24,6 +24,17 @@ push_total(x);
 
 function push_total(x){
     localStorage.setItem("cup_total",parseInt(x));
+    
+    //this code pushes data to your php
+    $.ajax({
+        url:"(enter your php file for cup payment)",
+        method: "post",
+        data: parseInt(x),
+        success: function(res){
+            console.log(res);
+        }
+    })
+    /* the data can be accessed by using the command $_POST['x']*/
     localStorage.setItem("cup_occasion",document.getElementById("occasion").value);
     localStorage.setItem("cup_detail",document.getElementById("details").value);
     localStorage.setItem("image_file",document.getElementById("file").value);

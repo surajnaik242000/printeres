@@ -15,7 +15,7 @@
         </section>
         <div class="cupdetail">
             <center>
-                <form>
+                <form method="post" action="../html/casepay.html">
                 <h1><b>custom phone case imprinting</b></h1>
                 <label> Choose type of phone :</label><br>
                  <select id="type">
@@ -27,20 +27,20 @@
                 <label>enter the device model:</label><br>
                      <input type="text" id="model" maxlength="500" placeholder="model name"><br>
                     <label> Choose type of case :</label><br>
-                 <select id="case">
-                        <option value="hard">hard case</option>
+                 <select id="cover">
+                        <option value="hard-case">hard case</option>
                         <option value="plastic">plastic</option>
                         <option value="powerbanked">power-pack</option>
-                         <option value="hardsand">sanded hard-case</option>
+                         <option value="hardsanded">sanded hard-case</option>
                     </select><br>
                     <label>enter the basic background color:</label><br>
-                     <input type="text" id="color" maxlength="500" placeholder="basic color"><br>
+                     <input type="color" id="color" maxlength="500" placeholder="basic color"><br>
                     <center>
                         <h4>*sanded hard-case will be of only background image .</h4> 
                         <h4>*please upload multiple images as a folder with your number as the name.</h4> 
                         <p>file name must be the users phone number.</p>
                         <input type="file" style="background-color:black; color: aliceblue;" name="file" id="file" /><br />
-                         <button id="payment" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" onclick="calculate()" >progress to final step</button>
+                         <button id="payment" value="phonecase" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" onclick="calculate()" >progress to final step</button>
                     </center>
                 <br>
                 </form>
@@ -53,5 +53,7 @@
                 <p style="align-items: left; text-align: center;"> By: <img src="../img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/steve_350/" style="color: white; text-decoration: none;">STEVE ASTON</a> and <img src="../img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/captured._.right/" style="color: white; text-decoration: none;">SURAJ K NAIK</a></p>
         </footer>
         <script type="text/javascript" src="../java/case.js"></script>
+        <script type="text/javascript" src="../java/j2.js"></script>
+        <script type="text/javascript" src="../java/jquery.min.js"></script>
     </body>
 </html>

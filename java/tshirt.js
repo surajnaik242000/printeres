@@ -27,6 +27,16 @@ push_total(x);
 
 function push_total(x){
     localStorage.setItem("tshirt_total",parseInt(x));
+    
+    $.ajax({
+        url:"/printeres/tshirt.php",
+        method: "post",
+        data: parseInt(x),
+        success: function(res){
+            console.log(res);
+        }
+    })
+    /* the data can be accessed by using the command $_POST['x']*/
     localStorage.setItem("size", document.getElementById("size").value);
     localStorage.setItem("shir_details", document.getElementById('details').value);
 }
@@ -43,7 +53,7 @@ function username()
 }
 var lastbtn = document.getElementById("payment");
 lastbtn.onclick = function(){
-    localStorage.setItem("object", document.getElementById("payment").value);
+    localStorage.setItem("object", "Tshirt");
     
     calculate();
 }

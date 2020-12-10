@@ -273,6 +273,16 @@ push_total(x);
 
 function push_total(x){
     localStorage.setItem("case_total",parseInt(x));
+    
+    $.ajax({
+        url:"../tshirt.php",
+        method: "post",
+        data: parseInt(x),
+        success: function(res){
+            console.log(res);
+        }
+    })
+    /* the data can be accessed by using the command $_POST['x']*/
     localStorage.setItem("case_model",document.getElementById("model").value);
     localStorage.setItem("case_company",document.getElementById("type").value);
     localStorage.setItem("case_type",document.getElementById('cover').value);

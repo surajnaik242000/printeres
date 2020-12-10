@@ -15,7 +15,7 @@
         </section>
         <div class="cupdetail">
             <center>
-                <form method="post" action="../tshirt.php">
+                <form method="post" action="../tpay.php">
                 <h1><b>custom T-shirt imprinting</b></h1>
                 <label> Choose the size of your t-shirt :</label><br>
                     <select id="size" name="Size">
@@ -25,13 +25,13 @@
                         <option value="extra-large">extra-large</option>
                     </select><br>
                 <label>Anymore detals of the design needed :</label><br>
-                     <input name="details" type="text" maxlength="500" placeholder="breif text" style="height: 130px; width: 400px;"><br>
+                     <input type="text" id="details" name="details" maxlength="500" placeholder="breif text" style="height: 130px; width: 400px;"><br>
                     <center>
                         <h3>*please upload multiple images as a folder with your number as the name.</h3> 
                         <p>file name must be the users phone number.</p>
                         <input type="file" style="background-color:black; color: aliceblue;" name="file" id="file" /><br />
                         <p></p>
-                        <input type="submit" name="submit" id="payment" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" onclick="calculate()" >progress to final step</input>
+                        <input id="payment" name="submit" type="submit" value="Final Step" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" ></input>
                     </center>
                 <br>
                 </form>
@@ -44,5 +44,7 @@
                 <p style="align-items: left; text-align: center;"> By: <img src="../img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/steve_350/" style="color: white; text-decoration: none;">STEVE ASTON</a> and <img src="../img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/captured._.right/" style="color: white; text-decoration: none;">SURAJ K NAIK</a></p>
         </footer>
         <script type="text/javascript" src="../java/tshirt.js"></script>
+        <script type="text/javascript" src="../java/j2.js"></script>
+        <script type="text/javascript" src="../java/jquery.min.js"></script>
     </body>
 </html>

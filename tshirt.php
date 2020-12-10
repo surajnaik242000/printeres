@@ -24,9 +24,10 @@ if(isset($_POST['submit']))
 	$order_id = generateon('tshirt',$db);
 	$total=0;
 	$odate = date('Y-m-d H:i:s') ;
-echo "
-		INSERT into table orders values '$order_id',$id , '$ad', $total ,-1,'$details size : $selected_size' , 'TSHIRT' , '$odate'
+
+	$queryo="	INSERT into table orders values '$order_id',$id , '$ad', $total ,-1,'$details size : $selected_size' , 'TSHIRT' , '$odate'
 	"; 
+	$result = mysqli_query($db,$queryo);
 }
 
 ?>
