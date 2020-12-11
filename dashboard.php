@@ -17,12 +17,74 @@ include("auth.php");
         <hr>
         <p >You are now in user dashboard page.</p>
          </div>
-   <div class="container border bg-light ">
+    <div class="container border p-5 ">
+      <div class="col-sm-12 bg-">
+      <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Order Amount</th>
+        <th>Payment Status</th>
+        <th>Order Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+    <?php
+      require('define.php');
+      $query_1 = " SELECT u1.username,u1.id FROM  user_details u1 WHERE u1.username='".$_SESSION['username']."'";
+        $result_1 = mysqli_query($db,$query_1);
+        if(mysqli_num_rows($result_1)==1)
+        {
+          $row = mysqli_fetch_assoc($result_1);
+          $id= $row['id'];
+        }
+      $selecto= " SELECT order_no , o_address, o_amt,o_payment,o_date from orders where user_id=$id";
+      $resulto=mysqli_query($db,$selecto);
+      $numrows=mysqli_num_rows($resulto);
+      if($numrows>0)
+      {
+        while($row=mysqli_fetch_assoc($resulto))
+        {
+          $onum=$row['order_no'];
+          $amt=$row['o_amt'];
+          $pay=$row['o_payment'];
+          if($pay==-1)
+          {
+            $pay="Not Paid ";
+          }
+          $odate=$row['o_date'];
+          echo
+          "
+            <tr>
+            <td>
+            $onum
+            </td>
+            <td>
+            $amt
+            </td>
+            <td>
+            $pay
+            </td>
+            <td>
+            $odate
+            </td>
+            <tr>
+          ";
+        }
+      }
+
+    ?>
+  </tbody>
+</table>
+  </div>
+   <div class="col-sm-12 border bg-light rounded ">
    	<div class="row">
         <span class="col-sm-6 text-center btn btn-light"><a href="/printeres/html/consume.html">Go to Shop</a></span>
         <span class="col-sm-6 text-center btn btn-light"><a href="logout.php">Logout</a></span>
    	</div>
    </div>
+ </div>
   </button>
 </div>
 </body>
