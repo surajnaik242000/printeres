@@ -1,20 +1,15 @@
+
 <?php
     require('auth.php');
     require('getid.php');
     require('orderidgen.php');
     if(isset($_POST['submit']))
-{
-    $selected_size = $_POST['Size'];  
-    $details = $_POST['details'];
-    $order_id = generateon('tshirt',$db);
-    $odate = date('Y-m-d H:i:s') ;
-    $total= $_COOKIE["tshirt_total"]; 
-    // foreach ($_POST as $key => $value) {
-      
-    //   print($key." , ".$value."<br>");
-    // }
-    // image file operations.ltd
-
+    {
+        $cupcolor = $_POST['cupcolor'];  
+        $details = $_POST['details']." occasion : ".$_POST['occasion'];
+        $order_id = generateon('Cup',$db);
+        $odate = date('Y-m-d H:i:s') ;
+        $total= $_COOKIE["cup_total"]; 
     $target_dir = "orders/".$id."/";
     if(!is_dir($target_dir))
     {mkdir($target_dir);}
@@ -60,17 +55,15 @@ else
   {
     echo "Sorry, there was an error uploading your file.";
   }
+}
+}
 
-
-    $queryo="   INSERT into orders values('$order_id',$id , '$ad', $total ,-1,'$details size : $selected_size' , 'TSHIRT' , '$odate');
-    "; 
-    $resulto=mysqli_query($db,$queryo);
+  $queryo="   INSERT into orders values('$order_id',$id , '$ad', $total ,-1,'$details  $ cupcolor : $cupcolor', 'CUP' , '$odate');";
+  $resulto=mysqli_query($db,$queryo);
     if(!$resulto)
     {
       print(" Error occured ! Order not placed");
     }
-}
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,10 +77,9 @@ else
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/pay.css">
+        <link rel="stylesheet" href="css/pay.css">
     </head>
-
     <body onload="username()">
-
         <section id="top">
             <b>PRINT ANYWHERE <sup>®</sup></b>
         </section>
@@ -105,14 +97,19 @@ else
                         <td id="object"></td>
                     </tr>
                     <tr>
-                        <td>t-shirt size :</td>
-                        <td id="size"></td>
+                        <td>cup type :</td>
+                        <td id="type"></td>
                     </tr>
                     <tr>
                         <td>total cost :</td>
                         <td id="total"></td>
                     </tr>
-                     <tr>
+                    <tr>
+                        
+                        <td>ocassion :</td>
+                        <td id="occasion"></td>
+                    </tr>
+                      <tr>
                         <td>order name :</td>
                         <td id="orderno"><?php echo"$order_id" ?></td>
                     </tr>
@@ -122,15 +119,13 @@ else
                         <td id="image"><?php echo"$filename" ?></td>
                     </tr>
                 </table> </form>
-               
                <input type="button" value="Print this page" onClick="window.print()" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;">
-              
+                   
             </center>
         </div>
-        <a href="/printeres/html/consume.html">Home page</a>
                   <footer id="makers" class="makers" style="position: fixed">
                 <p style="align-items: left; text-align: center;"> By: <img src="img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/steve_350/" style="color: white; text-decoration: none;">STEVE ASTON</a> and <img src="img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/captured._.right/" style="color: white; text-decoration: none;">SURAJ K NAIK</a></p>
         </footer>
-        <script type="text/javascript" src="java/tpay.js"></script>
+        <script type="text/javascript" src="java/pay.js"></script>
     </body>
 </html>

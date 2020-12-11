@@ -1,20 +1,18 @@
+
 <?php
     require('auth.php');
     require('getid.php');
     require('orderidgen.php');
     if(isset($_POST['submit']))
-{
-    $selected_size = $_POST['Size'];  
-    $details = $_POST['details'];
-    $order_id = generateon('tshirt',$db);
-    $odate = date('Y-m-d H:i:s') ;
-    $total= $_COOKIE["tshirt_total"]; 
-    // foreach ($_POST as $key => $value) {
-      
-    //   print($key." , ".$value."<br>");
-    // }
-    // image file operations.ltd
+    {
+        $brandm = $_POST['brand']." model: ".$_POST['model'];  
+        $details = "color : ".$_POST['color']." material : ".$_POST['material'];
+        $order_id = generateon('Case',$db);
+        $odate = date('Y-m-d H:i:s') ;
+        $total= $_COOKIE["case_total"]; 
 
+    if( isset($_FILES['fileupload']))
+    {
     $target_dir = "orders/".$id."/";
     if(!is_dir($target_dir))
     {mkdir($target_dir);}
@@ -46,7 +44,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 
 if ($uploadOk == 0) 
 {
-  echo "Sorry, your file was not uploaded.";
+  echo " File not uploaded . Possible reasons could be that the file is not an image ";
   exit(1);
 } 
 else 
@@ -60,19 +58,20 @@ else
   {
     echo "Sorry, there was an error uploading your file.";
   }
-
-
-    $queryo="   INSERT into orders values('$order_id',$id , '$ad', $total ,-1,'$details size : $selected_size' , 'TSHIRT' , '$odate');
-    "; 
-    $resulto=mysqli_query($db,$queryo);
-    if(!$resulto)
-    {
-      print(" Error occured ! Order not placed");
-    }
+}
+}
+else
+{
+      echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+  <strong>Image not provided </strong> The background color will be applied on the case .
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button>
+</div>";
+$filename="<p> <font color=".$_POST['color'].">color</font> </p> ";
 }
 }
 ?>
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -85,9 +84,7 @@ else
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/pay.css">
     </head>
-
     <body onload="username()">
-
         <section id="top">
             <b>PRINT ANYWHERE <sup>®</sup></b>
         </section>
@@ -105,32 +102,42 @@ else
                         <td id="object"></td>
                     </tr>
                     <tr>
-                        <td>t-shirt size :</td>
-                        <td id="size"></td>
+                        <td>phone company :</td>
+                        <td id="comp"></td>
                     </tr>
                     <tr>
-                        <td>total cost :</td>
+                        <td>model :</td>
+                        <td id="model"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td>type of case :</td>
+                        <td id="cover"></td>
+                    </tr>
+                    <tr>
+                        <td>background color :</td>
+                        <td id="bg" style="text-transform: none"></td>
+                    </tr>
+                     <tr>
+                        <td>total amount :</td>
                         <td id="total"></td>
                     </tr>
-                     <tr>
-                        <td>order name :</td>
-                        <td id="orderno"><?php echo"$order_id" ?></td>
+                    <tr>
+                        <td>order number :</td>
+                        <td id="orderno"><?php echo"$order_id" ?></td> <!-- order number let it be combination username and something -->
                     </tr>
                      <tr>
-                        
                         <td>image file :</td>
                         <td id="image"><?php echo"$filename" ?></td>
                     </tr>
                 </table> </form>
-               
-               <input type="button" value="Print this page" onClick="window.print()" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;">
-              
+               <button id="done" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px; margin-bottom: 0.5cm" >place order</button>
+                   
             </center>
         </div>
-        <a href="/printeres/html/consume.html">Home page</a>
                   <footer id="makers" class="makers" style="position: fixed">
                 <p style="align-items: left; text-align: center;"> By: <img src="img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/steve_350/" style="color: white; text-decoration: none;">STEVE ASTON</a> and <img src="img/Instagram-Logo.wine.png" width="20px" height="20px"><a href="https://www.instagram.com/captured._.right/" style="color: white; text-decoration: none;">SURAJ K NAIK</a></p>
         </footer>
-        <script type="text/javascript" src="java/tpay.js"></script>
+        <script type="text/javascript" src="java/cpay.js"></script>
     </body>
 </html>

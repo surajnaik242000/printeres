@@ -35,3 +35,8 @@ tshirt.php
 		</div>
 	</div>
 </div>
+
+
+QUeries
+
+"INSERT into table orders values $order_id,$id , $ad, $total ,-1,'".$details.$selected_size"' , $item , 

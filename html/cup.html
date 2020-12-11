@@ -15,22 +15,22 @@
         </section>
         <div class="cupdetail">
             <center>
-                <form id="cup" action="../html/payup.html">
+                <form id="cup" action="../payup.php" enctype="multipart/form-data" method="post">
                 <h1><b>custom coffee cups imprinting</b></h1>
                 <label> Choose the type of coffee mug :</label><br>
-                    <select id="cuptype">
+                    <select id="cuptype" name="cupcolor">
                        <option id="sc" value="single" >single color</option>
                      <option id="dc" value="dual" >dual color</option>
                     </select><br>
                 <label> Occasion of printing :</label><br>
-                     <input id="occasion" type="text" maxlength="100"><br>
+                     <input id="occasion" name="occasion" type="text" maxlength="100"><br>
                 <label>Anymore detals of the design needed :</label><br>
-                     <input id="details" type="text" maxlength="500" placeholder="breif text" style="height: 130px; width: 400px;"><br>
+                     <input id="details" type="text" name="details" type="submit" length="500" placeholder="details" name="submit" style="height: 130px; width: 400px;"><br>
                     <center>
                         <h3>*please upload multiple images as a folder with your number as the name.</h3> 
-                        <p>file name must be the users phone number.</p>
-                        <input type="file" style="background-color:black; color: aliceblue;" name="file" id="file" /><br/>
-                        <button id="payment" value="cup" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" onclick="calculate()" >progress to final step</button>
+     input             <p>file name must be the users phone number.</p>
+                        <input name="fileupload" type="file" style="background-color:black; color: aliceblue;" name="file" id="file" /><br/>
+                        <input type="submit" id="payment" value="Final Step" name="submit" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" onclick="calculate()" />
                     </center>
                 <br>
                 </form>

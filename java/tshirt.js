@@ -27,9 +27,28 @@ push_total(x);
 
 function push_total(x){
     localStorage.setItem("tshirt_total",parseInt(x));
-    
+    $(document).ready(function () { 
+    createCookie("tshirt_total",x, "10"); 
+}); 
+   
+// Function to create the cookie 
+function createCookie(name, value, days) { 
+    var expires; 
+      
+    if (days) { 
+        var date = new Date(); 
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
+        expires = "; expires=" + date.toGMTString(); 
+    } 
+    else { 
+        expires = ""; 
+    } 
+      
+    document.cookie = escape(name) + "=" +  
+        escape(value) + expires + "; path=/"; 
+} 
     $.ajax({
-        url:"/printeres/tshirt.php",
+        url:"/printeres/tpay.php",
         method: "post",
         data: parseInt(x),
         success: function(res){

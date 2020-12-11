@@ -15,32 +15,32 @@
         </section>
         <div class="cupdetail">
             <center>
-                <form method="post" action="../html/casepay.html">
+                <form method="post" action="../casepay.php">
                 <h1><b>custom phone case imprinting</b></h1>
                 <label> Choose type of phone :</label><br>
-                 <select id="type">
+                 <select id="type" name="brand">
                         <option value="samsung">samsung</option>
                         <option value="apple">apple</option>
                         <option value="oneplus">oneplus</option>
                         <option value="motorola">motorola</option>
                     </select><br>
                 <label>enter the device model:</label><br>
-                     <input type="text" id="model" maxlength="500" placeholder="model name"><br>
+                     <input type="text" name="model" id="model" maxlength="500" placeholder="model name"><br>
                     <label> Choose type of case :</label><br>
-                 <select id="cover">
+                 <select id="cover" name="material">
                         <option value="hard-case">hard case</option>
                         <option value="plastic">plastic</option>
                         <option value="powerbanked">power-pack</option>
                          <option value="hardsanded">sanded hard-case</option>
                     </select><br>
                     <label>enter the basic background color:</label><br>
-                     <input type="color" id="color" maxlength="500" placeholder="basic color"><br>
+                     <input type="color" name="color" id="color" maxlength="500" placeholder="basic color"><br>
                     <center>
                         <h4>*sanded hard-case will be of only background image .</h4> 
                         <h4>*please upload multiple images as a folder with your number as the name.</h4> 
                         <p>file name must be the users phone number.</p>
-                        <input type="file" style="background-color:black; color: aliceblue;" name="file" id="file" /><br />
-                         <button id="payment" value="phonecase" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" onclick="calculate()" >progress to final step</button>
+                        <input type="file" style="background-color:black; color: aliceblue;" name="fileupload" id="file" /><br />
+                         <input id="payment" type="submit" name="submit" value="phonecase" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;" onclick="calculate()">
                     </center>
                 <br>
                 </form>
