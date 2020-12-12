@@ -6,7 +6,7 @@
     if(isset($_POST['submit']))
     {
         $brandm = $_POST['brand']." model: ".$_POST['model'];  
-        $details = "color : ".$_POST['color']." material : ".$_POST['material'];
+        $details = "color : ".$_POST['color']." material : ".$_POST['material']." brand : ".$brandm;
         $order_id = generateon('Case',$db);
         $odate = date('Y-m-d H:i:s') ;
         $total= $_COOKIE["case_total"]; 
@@ -71,6 +71,13 @@ else
 $filename="<p> <font color=".$_POST['color'].">color</font> </p> ";
 }
 }
+$queryo="   INSERT into orders values('$order_id',$id , '$ad', $total ,-1,'$details', 'Case' , '$odate');";
+// print($queryo)
+  $resulto=mysqli_query($db,$queryo);
+    if(!$resulto)
+    {
+      print(" Error occured ! Order not placed");
+    }
 ?>
 <html>
     <head>
@@ -131,8 +138,7 @@ $filename="<p> <font color=".$_POST['color'].">color</font> </p> ";
                         <td id="image"><?php echo"$filename" ?></td>
                     </tr>
                 </table> </form>
-               <button id="done" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px; margin-bottom: 0.5cm" >place order</button>
-                   
+                <input type="button" value="Print this page" onClick="window.print()" style="color: aliceblue; background-color: darkslategrey; box-shadow: 2px 2px 2px deepskyblue; width: 200px; height: 40px;">    
             </center>
         </div>
                   <footer id="makers" class="makers" style="position: fixed">

@@ -8,10 +8,11 @@ function username()
     document.getElementById('username').innerHTML = name;
 }
 
-function calculate(){
-var y = document.getElementById("type").selectedIndex;
-  var phone = document.getElementsByTagName("option")[y].value;
-  var cover = document.getElementById('cover').value;
+function calculate()
+{
+    var y = document.getElementById("type").selectedIndex;
+    var phone = document.getElementsByTagName("option")[y].value;
+    var cover = document.getElementById('cover').value;
     var model = document.getElementById("model").value;
     var x = 100;
     if ( phone == "samsung")
@@ -274,13 +275,6 @@ var y = document.getElementById("type").selectedIndex;
 push_total(x);
 }
 
-function push_total(x){
-    localStorage.setItem("case_total",parseInt(x));
-       $(document).ready(function () { 
-    createCookie("case_total",x, "10"); 
-}); 
-   
-// Function to create the cookie 
 function createCookie(name, value, days) { 
     var expires; 
       
@@ -297,15 +291,24 @@ function createCookie(name, value, days) {
         escape(value) + expires + "; path=/"; 
 } 
 
+
+function push_total(x){
+    localStorage.setItem("case_total",parseInt(x));
+       $(document).ready(function () { 
+    createCookie("case_total",parseInt(x), "10"); 
+}); 
+   
+// Function to create the cookie 
+
     
-    $.ajax({
+    /*<!-- $.ajax({
         url:"../tshirt.php",
         method: "post",
         data: parseInt(x),
         success: function(res){
             console.log(res);
         }
-    })
+    })-->
     /* the data can be accessed by using the command $_POST['x']*/
     localStorage.setItem("case_model",document.getElementById("model").value);
     localStorage.setItem("case_company",document.getElementById("type").value);
