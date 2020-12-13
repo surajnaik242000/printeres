@@ -78,6 +78,7 @@ footer{
     color: white;
     width: 99%;
     position: static;
+    margin: 0.4cm;
     bottom: 10px;
     text-align: left;
 }

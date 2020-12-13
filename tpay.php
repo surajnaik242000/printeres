@@ -2,8 +2,11 @@
     require('auth.php');
     require('getid.php');
     require('orderidgen.php');
+        // require(/'checkempty.php');
     if(isset($_POST['submit']))
 {
+  // $arr=array('Size','details','fileupload');
+  // chek($arr);
     $selected_size = $_POST['Size'];  
     $details = $_POST['details'];
     $order_id = generateon('tshirt',$db);

@@ -3,8 +3,11 @@
     require('auth.php');
     require('getid.php');
     require('orderidgen.php');
+//        require('checkempty.php');
     if(isset($_POST['submit']))
     {
+//        $arr=array('brand','model','material','color','fileupload');
+//        chek($arr);
         $brandm = $_POST['brand']." model: ".$_POST['model'];  
         $details = "color : ".$_POST['color']." material : ".$_POST['material']." brand : ".$brandm;
         $order_id = generateon('Case',$db);

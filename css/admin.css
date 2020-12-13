@@ -1,0 +1,10 @@
+
+
+body {
+    background: linear-gradient(45deg, #8F8787, #333333, #242424, #000000);
+    background-size: 400% 400%;
+    color: aliceblue;
+    animation: gradient 15s ease infinite;
+
+}
+
