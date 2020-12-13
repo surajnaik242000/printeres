@@ -41,3 +41,5 @@
     - Apache
     - MySQL
     
+2. Goto the browser and type in the host IP.
+
